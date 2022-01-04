@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    web:
+        build:
+        container_name: arjuna_reynaldy
+
+        command : gunicorn mysite.wsgi:application --bind 0.0.0.0:9004
+
+
+
+        volume:
+            - .:/app
+        ports:
+            - "9004:9004"
